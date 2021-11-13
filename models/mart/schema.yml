@@ -1,0 +1,67 @@
+version: 2
+
+models:
+    - name: fact_sales
+      description: "Tabela de Fatos de Vendas"
+      columns:
+          - name: salesorderid
+            description: "A chave primária original da tabela"
+            tests:
+                - unique
+                - not_null
+    - name: dim_credit_card
+      description: "Dimensão do Cartão de Crédito"
+      columns:
+          - name: creditcardid
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+    - name: dim_customer
+      description: "Dimensão dos Clientes"
+      columns:
+          - name: customerid
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+    - name: dim_person_adress
+      description: "Dimensão do Endereço das Pessoas"
+      columns:
+          - name: addressid
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+    - name: dim_product
+      description: "Dimensão do Produto"
+      columns:
+          - name: productid
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+    - name: dim_sale_reason
+      description: "Dimensão da Razão de Venda"
+      columns:
+          - name: salesreasonid
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+    - name: dim_order_detail
+      description: "Dimensão de Detalhe do Pedido"
+      columns:
+          - name: salesorderdetailid
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+    - name: dim_sales_territory
+      description: "Dimensão das Vendas por Território"
+      columns:
+          - name: territoryid
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null

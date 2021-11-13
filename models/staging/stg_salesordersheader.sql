@@ -1,18 +1,33 @@
 with
     source_data as (
         select
-            salesorderid		
-            , salesorderdetailid		
-            , carriertrackingnumber		
-            , orderqty	
-            , productid		
-            , specialofferid		
-            , unitprice		
-            , unitpricediscount	
-            , rowguid	
-            , modifieddate		
+            salesorderid	
+            , revisionnumber		
+            , orderdate
+            , duedate	
+            , shipdate
+            , status	
+            , onlineorderflag
+            , purchaseordernumber	
+            , accountnumber	
+            , customerid		
+            , salespersonid		
+            , territoryid		
+            , billtoaddressid		
+            , shiptoaddressid	
+            , shipmethodid		
+            , creditcardid		
+            , creditcardapprovalcode	
+            , currencyrateid		
+            , subtotal		
+            , taxamt		
+            , freight		
+            , totaldue		
+            , comment		
+            , rowguid		
+            , modifieddate
     
-        from {{ source('erp','sales_salesorderdetail') }}
+        from {{ source('erp','sales_salesorderheader') }}
     )
 
 select * from source_data
